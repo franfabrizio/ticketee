@@ -31,10 +31,18 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       flash[:notice] = "Project has been updated."
       redirect_to @project
-    else
-      flash.now[:alert] = "Project has not been updated."
+    else flash.now[:alert] = "Project has not been updated."
       render "edit"
-    end end
+    end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    flash[:notice] = "Project has been deleted."
+    redirect_to projects_path
+  end
+
   private
 
   def project_params
