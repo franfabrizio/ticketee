@@ -13,5 +13,9 @@
     </ul>
   </div>
 
+  <p id="author">
+    Created by <%= @ticket.author.email %>, <%= time_ago_in_words(@ticket.created_at) %> ago
+  </p>
+
   <%= simple_format(@ticket.description) %>
 </div>
