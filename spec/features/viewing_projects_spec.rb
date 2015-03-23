@@ -6,8 +6,11 @@ RSpec.feature "Viewing projects" do
     login_as(user)
     assign_role!(user, :viewer, project)
   end
+
   scenario "Listing all projects" do
+    FactoryGirl.create(:project, name: "Hidden")
     visit "/"
+    expect(page).to_not have_content("Hidden")
     click_link project.name
     expect(page.current_url).to eql(project_url(project))
   end
