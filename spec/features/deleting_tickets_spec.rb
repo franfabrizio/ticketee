@@ -1,11 +1,15 @@
 require "rails_helper"
 RSpec.feature "Deleting tickets" do
+
   let!(:project) { FactoryGirl.create(:project) }
   let(:user) { FactoryGirl.create(:user) }
   let!(:ticket) do
     FactoryGirl.create(:ticket, project: project, author: user)
   end
+
   before do
+    login_as(user)
+    assign_role!(user, :viewer, project)
     visit project_ticket_path(project, ticket)
   end
 
