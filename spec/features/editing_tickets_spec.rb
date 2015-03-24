@@ -12,6 +12,7 @@ RSpec.feature "Editing tickets" do
     visit project_ticket_path(project, ticket)
     click_link "Edit Ticket"
   end
+
   scenario "with valid attributes" do
     fill_in "Title", with: "Make it really shiny!"
     click_button "Update Ticket"
@@ -21,6 +22,7 @@ RSpec.feature "Editing tickets" do
     end
     expect(page).to_not have_content(ticket.title)
   end
+
   scenario "with invalid attributes" do
     fill_in "Title", with: ""
     click_button "Update Ticket"
