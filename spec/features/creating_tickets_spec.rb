@@ -62,5 +62,5 @@ RSpec.feature "Creating Tickets" do
       expect(page).to have_content("speed.txt")
     end
   end
-  
+
 end
