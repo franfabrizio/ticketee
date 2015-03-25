@@ -1,0 +1,1 @@
+￼The blink tag can blink faster if you use the speed="hyper" attribute.
