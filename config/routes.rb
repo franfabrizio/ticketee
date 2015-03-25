@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  resources :assets, only: [:show], path: :files
+  resources :assets, only: [:show, :new], path: :files
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
