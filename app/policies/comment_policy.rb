@@ -1,0 +1,3 @@
+class CommentPolicy < TicketPolicy
+
+end
