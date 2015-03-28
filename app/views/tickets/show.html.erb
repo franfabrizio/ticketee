@@ -25,6 +25,10 @@
     Created by <%= @ticket.author.email %>, <%= time_ago_in_words(@ticket.created_at) %> ago
   </p>
 
+  <% if @ticket.state.present? %>
+      State: <%= render @ticket.state %>
+  <% end %>
+
   <%= simple_format(@ticket.description) %>
   <% if @ticket.assets.any? %>
       <h4>Attached Files</h4>
