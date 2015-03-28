@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     root 'base#index'
     resources :projects, only: [:new, :create, :destroy]
     resources :users
-    resources :states, only: [:index, :new, :create]
+    resources :states, only: [:index, :new, :create] do
+      member do
+        get :make_default
+      end
+    end
   end
 
   resources :assets, only: [:show, :new], path: :files
