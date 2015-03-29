@@ -46,6 +46,9 @@ gem "pundit", "~> 0.3.0"
 #carrierwave
 gem "carrierwave", "~> 0.10.0"
 
+# searcher
+gem "searcher", github: "radar/searcher"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
