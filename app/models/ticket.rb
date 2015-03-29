@@ -7,8 +7,17 @@ class Ticket < ActiveRecord::Base
   has_many :assets, dependent: :destroy
   accepts_nested_attributes_for :assets, reject_if: :all_blank
   has_many :comments, dependent: :destroy
+  attr_accessor :tag_names
+  has_and_belongs_to_many :tags, uniq: true
 
   before_create :assign_default_state
+
+  def tag_names=(names)
+    @tag_names = names
+    names.split(",").each do |name|
+      self.tags << Tag.find_or_initialize_by(name: name)
+    end
+  end
 
   private
 

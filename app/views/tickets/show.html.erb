@@ -29,6 +29,13 @@
       State: <%= render @ticket.state %>
   <% end %>
 
+  <% if @ticket.tags.any? %>
+      <tr id="tags">
+        <th>Tags:</th>
+        <td><%= render @ticket.tags %></td>
+      </tr>
+  <% end %>
+
   <%= simple_format(@ticket.description) %>
   <% if @ticket.assets.any? %>
       <h4>Attached Files</h4>
