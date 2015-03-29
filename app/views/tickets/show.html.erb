@@ -36,6 +36,16 @@
       </tr>
   <% end %>
 
+  <tr id="watchers">
+    <th>Watchers:</th>
+    <td>
+      <%= toggle_watching_button(@ticket) %><br />
+    </td>
+    <td>
+      <%= @ticket.watchers.map(&:email).to_sentence %>
+    </td>
+  </tr>
+
   <%= simple_format(@ticket.description) %>
   <% if @ticket.assets.any? %>
       <h4>Attached Files</h4>
