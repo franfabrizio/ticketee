@@ -68,5 +68,6 @@ group :test do
   gem "factory_girl_rails", "~> 4.5"
   gem "selenium-webdriver", "~> 2.45.0"
   gem "database_cleaner", "~> 1.4.0"
+  gem "email_spec", "~> 1.6.0"
 end
 
