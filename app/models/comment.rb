@@ -9,6 +9,7 @@ class Comment < ActiveRecord::Base
   after_create :set_ticket_state
   attr_accessor :tag_names
   after_create :associate_tags_with_ticket
+  after_create :author_watches_ticket
 
   private
   def set_previous_state
@@ -25,5 +26,11 @@ class Comment < ActiveRecord::Base
   def set_ticket_state
     ticket.state = state
     ticket.save!
+  end
+
+  def author_watches_ticket
+    if author && !ticket.watchers.include?(author)
+      ticket.watchers << author
+    end
   end
 end
