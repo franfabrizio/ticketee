@@ -22,6 +22,6 @@ class CommentsController < ApplicationController
     @ticket = Ticket.find(params[:ticket_id])
   end
   def comment_params
-    params.require(:comment).permit(:text, :state_id)
+    params.require(:comment).permit(:text, :state_id, :tag_names)
   end
 end
