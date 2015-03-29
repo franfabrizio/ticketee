@@ -55,4 +55,7 @@ RSpec.configure do |config|
   # pundit support
 
   require "pundit/rspec"
+
+  # bring in devise
+  config.include Devise::TestHelpers, type: :controller
 end
