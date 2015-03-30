@@ -84,4 +84,5 @@ RSpec.configure do |config|
 =end
 
   config.full_backtrace = false
+
 end
