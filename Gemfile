@@ -49,6 +49,9 @@ gem "carrierwave", "~> 0.10.0"
 # searcher
 gem "searcher", github: "radar/searcher"
 
+# fog
+gem 'fog', '~> 1.16.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
