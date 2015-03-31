@@ -1,4 +1,7 @@
+require 'puma/capistrano'
+
 require 'bundler/capistrano'
+
 set :user, 'vagrant'
 set :use_sudo, false
 set :application, "ticketee"
