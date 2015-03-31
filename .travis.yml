@@ -1,6 +1,13 @@
 language: ruby
 rvm: 2.0.0
-script: "bin/rake spec"
+script: bin/rake spec
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+deploy:
+  provider: heroku
+  api_key:
+    secure: ZfESpa0Yi8uvb2B9reodESXlZGk3eGXWcReorTS7B48n79xqxPpefYDlknBIJW19JKQ9bJJNEQ3QTDlDgXqGuMro+Vpl5JaexqyD9PZxG2g+2A4pB6fhuTPhTptB360BQ8JH8KeqjY3R59HlBUq1bBTDFN+tBDPkIFZIIkkd5n8=
+  app: cryptic-plateau-1368
+  on:
+    repo: franfabrizio/ticketee
